@@ -17,13 +17,15 @@ public class LoginSteps {
         DriverFactory.getDriver().get("https://the-internet.herokuapp.com/login");
     }
 
-    @When("user enters {string} and {string}")
+    @When("user enters login username {string} and password {string}")
     public void login(String u, String p) {
         page.login(u, p);
     }
 
-    @Then("user should see success message")
+    @Then("Then user should see login success message")
     public void verify() {
         log.info(page.getMsg());
     }
+
+
 }
